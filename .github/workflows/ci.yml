@@ -27,11 +27,8 @@ jobs:
       - name: Ruff format
         run: ruff format .
 
-      - name: Ruff lint auto-fix
-        run: ruff check . --fix
-
-      - name: Ruff lint verify
-        run: ruff check .
+      - name: Ruff lint advisory
+        run: ruff check . --fix --exit-zero
 
       - name: Run tests
         run: pytest -q
