@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Choose a HTTPS webhook option</title>
+  <desc id="desc">A decision chart for choosing Cloudflare Tunnel, VPS, or cloud hosting for the Telegram webhook HTTPS URL.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.card{fill:#fff;stroke:#cbd5e1;stroke-width:2}.best{fill:#ecfdf5;stroke:#22c55e;stroke-width:3}.warn{fill:#fff7ed;stroke:#fb923c;stroke-width:3}.label{font:800 28px system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}.text{font:500 20px system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}.small{font:500 16px system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}.mono{font:700 18px ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}.line{stroke:#334155;stroke-width:4;fill:none;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#334155"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="760"/>
+  <text x="60" y="62" class="label" fill="#0f172a">Step 4: Telegram webhook用のHTTPS URLを作る</text>
+  <text x="60" y="96" class="text" fill="#475569">Telegram webhookはHTTPSが必要です。最初はCloudflare Tunnelが一番ラクです。</text>
+
+  <rect x="430" y="145" width="340" height="105" rx="20" class="card"/>
+  <text x="478" y="187" class="text" fill="#0f172a">いま欲しいのは？</text>
+  <text x="478" y="222" class="small" fill="#475569">/telegram/webhook に届くHTTPS URL</text>
+
+  <rect x="70" y="340" width="320" height="220" rx="22" class="best"/>
+  <text x="105" y="385" class="label" fill="#166534">おすすめ</text>
+  <text x="105" y="425" class="text" fill="#166534">Cloudflare Tunnel</text>
+  <text x="105" y="465" class="small" fill="#166534">ローカル/VC環境を一時公開</text>
+  <text x="105" y="495" class="small" fill="#166534">開発・検証が早い</text>
+  <text x="105" y="525" class="small" fill="#166534">独自ドメインにも移行しやすい</text>
+
+  <rect x="440" y="340" width="320" height="220" rx="22" class="card"/>
+  <text x="475" y="385" class="label" fill="#0f172a">安定運用</text>
+  <text x="475" y="425" class="text" fill="#0f172a">VPS + Caddy/Nginx</text>
+  <text x="475" y="465" class="small" fill="#475569">長時間実行に向く</text>
+  <text x="475" y="495" class="small" fill="#475569">HermesやPaperclip同居も可</text>
+  <text x="475" y="525" class="small" fill="#475569">OS管理が必要</text>
+
+  <rect x="810" y="340" width="320" height="220" rx="22" class="warn"/>
+  <text x="845" y="385" class="label" fill="#9a3412">公開優先</text>
+  <text x="845" y="425" class="text" fill="#9a3412">Render / Fly / Railway</text>
+  <text x="845" y="465" class="small" fill="#9a3412">URL取得が簡単</text>
+  <text x="845" y="495" class="small" fill="#9a3412">無料枠のsleepに注意</text>
+  <text x="845" y="525" class="small" fill="#9a3412">本番DBは別途検討</text>
+
+  <path d="M540 250 C400 285 305 305 235 340" class="line"/>
+  <path d="M600 250 C600 285 600 305 600 340" class="line"/>
+  <path d="M660 250 C805 285 905 305 975 340" class="line"/>
+
+  <rect x="195" y="625" width="810" height="64" rx="18" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="225" y="666" class="mono" fill="#312e81">https://your-domain.example/telegram/webhook</text>
+</svg>
