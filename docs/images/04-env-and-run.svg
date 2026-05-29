@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Configure environment variables and run the app</title>
+  <desc id="desc">A visual guide for copying .env.example, setting secrets, starting uvicorn, and checking health endpoint.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.terminal{fill:#0f172a}.green{fill:#16a34a}.blue{fill:#2563eb}.orange{fill:#f97316}.label{font:800 28px system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}.text{font:500 20px system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}.small{font:500 16px system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}.mono{font:700 18px ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}.line{stroke:#334155;stroke-width:4;fill:none;marker-end:url(#arrow)}.num{font:800 22px system-ui;fill:white}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#334155"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="760"/>
+  <text x="60" y="62" class="label" fill="#0f172a">Step 3: 環境変数を入れて起動</text>
+  <text x="60" y="96" class="text" fill="#475569">Tokenなどの実値は `.env` またはSecretsに保存します。repoにはcommitしません。</text>
+
+  <rect x="70" y="145" width="320" height="470" rx="20" class="panel"/>
+  <circle cx="110" cy="190" r="24" class="blue"/><text x="103" y="199" class="num">1</text>
+  <text x="145" y="197" class="text" fill="#0f172a">.envを作成</text>
+  <rect x="105" y="235" width="250" height="95" rx="14" class="terminal"/>
+  <text x="125" y="275" class="mono" fill="#e2e8f0">cp .env.example .env</text>
+  <text x="105" y="370" class="small" fill="#475569">`.env` は `.gitignore` 済み</text>
+  <text x="105" y="400" class="small" fill="#475569">GitHubへ上げません</text>
+
+  <rect x="440" y="145" width="320" height="470" rx="20" class="panel"/>
+  <circle cx="480" cy="190" r="24" class="orange"/><text x="473" y="199" class="num">2</text>
+  <text x="515" y="197" class="text" fill="#0f172a">値を入れる</text>
+  <rect x="475" y="235" width="250" height="170" rx="14" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="495" y="272" class="mono" fill="#0f172a">TELEGRAM_BOT_TOKEN=...</text>
+  <text x="495" y="312" class="mono" fill="#0f172a">TELEGRAM_WEBHOOK_SECRET=...</text>
+  <text x="495" y="352" class="mono" fill="#0f172a">APP_DB_PATH=data/app.db</text>
+  <text x="475" y="445" class="small" fill="#475569">Webhook Secretは任意の長い文字列</text>
+  <text x="475" y="475" class="small" fill="#475569">Tokenと同じ値にはしない</text>
+
+  <rect x="810" y="145" width="320" height="470" rx="20" class="panel"/>
+  <circle cx="850" cy="190" r="24" class="green"/><text x="843" y="199" class="num">3</text>
+  <text x="885" y="197" class="text" fill="#0f172a">起動して確認</text>
+  <rect x="845" y="235" width="250" height="125" rx="14" class="terminal"/>
+  <text x="865" y="275" class="mono" fill="#e2e8f0">uvicorn app.main:app</text>
+  <text x="865" y="315" class="mono" fill="#e2e8f0">  --reload --port 8000</text>
+  <rect x="845" y="395" width="250" height="70" rx="14" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+  <text x="865" y="438" class="mono" fill="#166534">GET /health → ok</text>
+
+  <path d="M390 380 C410 380 420 380 440 380" class="line"/>
+  <path d="M760 380 C780 380 790 380 810 380" class="line"/>
+
+  <rect x="230" y="655" width="760" height="58" rx="18" fill="#e0f2fe" stroke="#38bdf8" stroke-width="2"/>
+  <text x="260" y="692" class="text" fill="#075985">ここまででAPIは動きます。次にHTTPS URLをTelegram webhookへ登録します。</text>
+</svg>
