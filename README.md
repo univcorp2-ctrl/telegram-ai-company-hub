@@ -4,6 +4,12 @@ Telegramから `/goal` を投げるだけで、AI会社のタスク分解、Obsi
 
 このリポジトリは、添付された構想「Telegram → Hermes → Obsidian → Paperclip → Claude/Codex → GitHub → Cloudflare」を、まず安全に動くローカル/Actions実行可能な形へ落とし込んだものです。
 
+## 画像付き初期設定ガイド
+
+初心者向けの画像付き手順は [`docs/setup.md`](docs/setup.md) にまとめています。
+
+![初期設定の全体像](docs/images/01-setup-overview.svg)
+
 ## できること
 
 - Telegram webhook形式のUpdateを受け取るFastAPIサーバー
@@ -107,12 +113,13 @@ curl -X POST http://localhost:8000/goals \
 
 - Python setup
 - dependency install
-- ruff format/lint check
+- ruff format
+- ruff lint advisory
 - pytest
 - サンプル成果物生成
-- `property-ocr-outputs` artifact互換の成果物アップロード
+- artifact upload
 
-artifact名は構想に合わせて `ai-company-hub-outputs` です。
+artifact名は `ai-company-hub-outputs` です。
 
 ## フォルダ構成
 
@@ -127,11 +134,10 @@ app/
   cli.py               # サンプル実行CLI
 samples/
   telegram_goal_update.json
-vault_templates/
-  00_AI_COMPANY/...
 docs/
   architecture.md
   setup.md
+  images/
 ```
 
 ## 本番運用に必要なもの
