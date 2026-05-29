@@ -1,0 +1,20 @@
+{
+  "update_id": 100000,
+  "message": {
+    "message_id": 1,
+    "from": {
+      "id": 12345,
+      "is_bot": false,
+      "first_name": "Irene",
+      "username": "irene"
+    },
+    "chat": {
+      "id": 12345,
+      "first_name": "Irene",
+      "username": "irene",
+      "type": "private"
+    },
+    "date": 1770000000,
+    "text": "/goal UNIV AI Real Estate Companyを起動。不動産仕入れ、融資、GitHub実装、Obsidian原液ナレッジ化を今日のタスクに分解して"
+  }
+}
