@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test-and-build-artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e '.[dev]'
+
+      - name: Ruff format check
+        run: ruff format --check .
+
+      - name: Ruff lint
+        run: ruff check .
+
+      - name: Run tests
+        run: pytest -q
+
+      - name: Generate sample outputs
+        run: python -m app.cli run-sample --output-dir outputs
+
+      - name: Upload outputs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-company-hub-outputs
+          path: outputs/
