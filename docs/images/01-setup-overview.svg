@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">Telegram AI Company Hub setup overview</title>
+  <desc id="desc">A visual setup overview showing Telegram, GitHub Codespaces, FastAPI, Outputs, and optional production hosting.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.card{fill:#fff;stroke:#cbd5e1;stroke-width:2}.head{fill:#0f172a}.muted{fill:#475569}.accent{fill:#2563eb}.green{fill:#16a34a}.orange{fill:#f97316}.purple{fill:#7c3aed}.line{stroke:#334155;stroke-width:4;fill:none;marker-end:url(#arrow)}.thin{stroke:#94a3b8;stroke-width:2;fill:none}.label{font:700 26px system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}.text{font:500 20px system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}.small{font:500 16px system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}.num{font:800 28px system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;fill:white}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#334155"/></marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.12"/></filter>
+  </defs>
+  <rect class="bg" width="1200" height="680"/>
+  <text x="60" y="62" class="label head">初期設定の全体像</text>
+  <text x="60" y="96" class="text muted">まずCodespacesで動かす → Telegram Botを作る → HTTPS webhookを設定 → 出力を確認</text>
+
+  <g filter="url(#shadow)">
+    <rect x="60" y="145" width="235" height="160" rx="22" class="card"/>
+    <circle cx="92" cy="178" r="20" class="accent"/><text x="83" y="187" class="num">1</text>
+    <text x="120" y="182" class="label head">GitHub</text>
+    <text x="90" y="222" class="text muted">Codespacesで開く</text>
+    <text x="90" y="252" class="small muted">依存関係は自動導入</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="360" y="145" width="235" height="160" rx="22" class="card"/>
+    <circle cx="392" cy="178" r="20" class="green"/><text x="383" y="187" class="num">2</text>
+    <text x="420" y="182" class="label head">FastAPI</text>
+    <text x="390" y="222" class="text muted">ローカル起動</text>
+    <text x="390" y="252" class="small muted">port 8000</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="660" y="145" width="235" height="160" rx="22" class="card"/>
+    <circle cx="692" cy="178" r="20" class="orange"/><text x="683" y="187" class="num">3</text>
+    <text x="720" y="182" class="label head">Telegram</text>
+    <text x="690" y="222" class="text muted">BotFatherでBot作成</text>
+    <text x="690" y="252" class="small muted">TokenはSecretへ保存</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="960" y="145" width="185" height="160" rx="22" class="card"/>
+    <circle cx="992" cy="178" r="20" class="purple"/><text x="983" y="187" class="num">4</text>
+    <text x="1020" y="182" class="label head">Webhook</text>
+    <text x="990" y="222" class="text muted">HTTPS URLへ接続</text>
+    <text x="990" y="252" class="small muted">/telegram/webhook</text>
+  </g>
+
+  <path d="M295 225 C325 225 330 225 360 225" class="line"/>
+  <path d="M595 225 C625 225 630 225 660 225" class="line"/>
+  <path d="M895 225 C925 225 930 225 960 225" class="line"/>
+
+  <g filter="url(#shadow)">
+    <rect x="115" y="410" width="285" height="150" rx="22" class="card"/>
+    <text x="145" y="455" class="label head">入力</text>
+    <text x="145" y="495" class="text muted">Telegramで /goal を送る</text>
+    <rect x="145" y="515" width="210" height="30" rx="15" fill="#e0f2fe"/>
+    <text x="160" y="536" class="small" fill="#0369a1">/goal 今日のタスク化</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="460" y="410" width="285" height="150" rx="22" class="card"/>
+    <text x="490" y="455" class="label head">処理</text>
+    <text x="490" y="495" class="text muted">AI会社タスクへ分解</text>
+    <text x="490" y="528" class="small muted">CEO / Research / Engineer / QA</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="805" y="410" width="285" height="150" rx="22" class="card"/>
+    <text x="835" y="455" class="label head">出力</text>
+    <text x="835" y="495" class="text muted">Markdown / SQLite / Excel</text>
+    <text x="835" y="528" class="small muted">GitHub Actions artifact</text>
+  </g>
+
+  <path d="M400 485 C425 485 435 485 460 485" class="line"/>
+  <path d="M745 485 C770 485 780 485 805 485" class="line"/>
+</svg>
