@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Register Telegram webhook URL</title>
+  <desc id="desc">A visual guide for registering the HTTPS webhook URL with Telegram Bot API.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.card{fill:#fff;stroke:#cbd5e1;stroke-width:2}.terminal{fill:#0f172a}.ok{fill:#dcfce7;stroke:#22c55e;stroke-width:2}.label{font:800 28px system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}.text{font:500 20px system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}.small{font:500 16px system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}.mono{font:700 18px ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}.line{stroke:#334155;stroke-width:4;fill:none;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#334155"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="760"/>
+  <text x="60" y="62" class="label" fill="#0f172a">Step 5: TelegramへWebhook URLを登録</text>
+  <text x="60" y="96" class="text" fill="#475569">取得したHTTPS URLをBot APIに登録します。Tokenは画面共有・commit禁止です。</text>
+
+  <rect x="70" y="155" width="475" height="430" rx="22" class="card"/>
+  <text x="105" y="205" class="label" fill="#0f172a">登録コマンド</text>
+  <rect x="105" y="245" width="390" height="205" rx="14" class="terminal"/>
+  <text x="125" y="285" class="mono" fill="#e2e8f0">curl "https://api.telegram.org/</text>
+  <text x="125" y="325" class="mono" fill="#e2e8f0">bot$TELEGRAM_BOT_TOKEN/</text>
+  <text x="125" y="365" class="mono" fill="#e2e8f0">setWebhook?url=$PUBLIC_URL/</text>
+  <text x="125" y="405" class="mono" fill="#e2e8f0">telegram/webhook"</text>
+  <text x="105" y="500" class="small" fill="#475569">PUBLIC_URL例:</text>
+  <text x="105" y="530" class="mono" fill="#334155">https://xxxx.trycloudflare.com</text>
+
+  <rect x="660" y="155" width="475" height="430" rx="22" class="card"/>
+  <text x="695" y="205" class="label" fill="#0f172a">確認方法</text>
+  <rect x="695" y="245" width="390" height="95" rx="14" class="terminal"/>
+  <text x="715" y="285" class="mono" fill="#e2e8f0">curl $PUBLIC_URL/health</text>
+  <text x="715" y="320" class="mono" fill="#e2e8f0"># {"status":"ok"}</text>
+
+  <rect x="695" y="380" width="390" height="105" rx="14" class="ok"/>
+  <text x="720" y="420" class="text" fill="#166534">TelegramでBotに送信</text>
+  <text x="720" y="455" class="mono" fill="#166534">/goal 今日のタスク化</text>
+
+  <text x="695" y="535" class="small" fill="#475569">返信が来たら、FastAPI → Planner → Exportまで成功です。</text>
+
+  <path d="M545 370 C590 370 615 370 660 370" class="line"/>
+</svg>
